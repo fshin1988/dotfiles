@@ -36,7 +36,8 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-
+" シンタックスハイライト
+syntax enable
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -62,6 +63,7 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 
+" 操作系
 " Oで改行を挿入する
 nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 " 入力モードでバックスペースを有効にする
@@ -70,15 +72,21 @@ set backspace=indent,eol,start
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
-" シンタックスハイライト
-syntax enable
-
-" tagsジャンプの時に複数ある時は一覧表示
-nnoremap <C-]> g<C-]>
-
 " 対応するdo end等にカーソル移動
 source $VIMRUNTIME/macros/matchit.vim
 
+" tags関連
+" ファイル保存時にtagsを作成
+let g:auto_ctags = 1
+let g:auto_ctags_tags_args = '--exclude="*.js" --tag-relative --recurse --sort=yes  --append=no'
+let g:auto_ctags_directory_list = ['.git']
+" .gitからtags読み込み
+set tags+=.git/tags
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]>
+
+
+" その他
 " cronを動かすためバックアップをスキップ
 set backupskip=/tmp/*,/private/tmp/*
 
@@ -105,6 +113,7 @@ if dein#load_state('/Users/fujita/.vim/dein_vim/')
   call dein#add('jpo/vim-railscasts-theme')
   call dein#add('tpope/vim-endwise')
   call dein#add('kchmck/vim-coffee-script')
+  call dein#add('soramugi/auto-ctags.vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
