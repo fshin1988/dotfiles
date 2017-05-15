@@ -76,6 +76,9 @@ syntax enable
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 
+" 対応するdo end等にカーソル移動
+source $VIMRUNTIME/macros/matchit.vim
+
 " cronを動かすためバックアップをスキップ
 set backupskip=/tmp/*,/private/tmp/*
 
