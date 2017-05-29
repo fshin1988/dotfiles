@@ -1,6 +1,8 @@
 " setting
-"文字コードをUFT-8に設定
-set fenc=utf-8
+" Vimの内部文字コード
+set encoding=utf-8
+" ファイル編集時の文字コード
+set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
