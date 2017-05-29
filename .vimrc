@@ -2,7 +2,7 @@
 " Vimの内部文字コード
 set encoding=utf-8
 " ファイル編集時の文字コード
-set fileencodings=iso-2022-jp,cp932,sjis,euc-jp,utf-8
+set fileencodings=utf-8,euc-jp,sjis,cp932,iso-2022-jp
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
