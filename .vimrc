@@ -24,7 +24,9 @@ set cursorline
 " 現在の行を強調表示（縦）
 " set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
-set virtualedit=onemore
+" set virtualedit=onemore
+" 128桁目に印をつける
+set colorcolumn=128
 " インデントはスマートインデント
 set smartindent
 " ビープ音を可視化
@@ -87,7 +89,6 @@ set tags+=.git/tags
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 
-
 " その他
 " cronを動かすためバックアップをスキップ
 set backupskip=/tmp/*,/private/tmp/*
@@ -116,6 +117,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('tpope/vim-endwise')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('soramugi/auto-ctags.vim')
+  call dein#add('vim-syntastic/syntastic')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
@@ -153,3 +155,23 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgr
 let g:indent_guides_color_change_percent = 30
 " ガイドの幅
 let g:indent_guides_guide_size = 1
+
+" --------------------------------
+" syntastic
+" --------------------------------
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+" let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
+
+let g:syntastic_error_symbol='✗'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_warning_symbol = '⚠'
+let g:syntastic_style_warning_symbol = '⚠'
