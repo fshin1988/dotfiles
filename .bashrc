@@ -18,3 +18,5 @@ function crontab() {
 jsoncurl() {
   curl "${1}" | python -mjson.tool | sed 's/\\\u\(....\)/\&#x\1;/g' | nkf --numchar-input -w
 }
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)"
