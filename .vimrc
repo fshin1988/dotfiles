@@ -120,6 +120,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('soramugi/auto-ctags.vim')
   call dein#add('vim-syntastic/syntastic')
+  call dein#add('slim-template/vim-slim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
