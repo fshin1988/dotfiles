@@ -1,0 +1,2 @@
+rm .git/tags
+/usr/local/bin/ctags --exclude="*.js" --tag-relative --recurse --sort=yes  --append=no -f .git/tags
