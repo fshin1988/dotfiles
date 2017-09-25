@@ -1,7 +1,7 @@
 alias ssh=~/bin/ssh-host-color
 alias be='bundle exec'
 exdgrep() {
-  grep -rn "${1}" . --exclude-dir={./.git,./tmp,./log} | grep -v "^\.\/tags";
+  grep -rn "${1}" . --exclude-dir={./.git,./tmp,./log,./vendor} | grep -v "^\.\/tags";
 }
 # crontab -r を封印する
 function crontab() {
