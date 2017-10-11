@@ -32,3 +32,6 @@ Style/BlockDelimiters:
 
 Style/NumericLiterals:
   Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.4
