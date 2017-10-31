@@ -78,6 +78,7 @@ set backspace=indent,eol,start
 nnoremap x "_x
 nnoremap d "_d
 nnoremap D "_D
+nnoremap c "_c
 " 対応するdo end等にカーソル移動
 source $VIMRUNTIME/macros/matchit.vim
 
