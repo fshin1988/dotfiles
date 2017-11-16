@@ -95,6 +95,15 @@ nnoremap <C-]> g<C-]>
 " その他
 " cronを動かすためバックアップをスキップ
 set backupskip=/tmp/*,/private/tmp/*
+" 矢印キーは無効!
+map <Up> <Nop>
+map <Down> <Nop>
+map <Left> <Nop>
+map <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
 
 "dein Scripts-----------------------------
 if &compatible
