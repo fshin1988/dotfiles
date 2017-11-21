@@ -35,3 +35,9 @@ Style/NumericLiterals:
 
 AllCops:
   TargetRubyVersion: 2.4
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
