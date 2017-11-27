@@ -18,6 +18,12 @@ function crontab() {
 jsoncurl() {
   curl "${1}" | python -mjson.tool | sed 's/\\\u\(....\)/\&#x\1;/g' | nkf --numchar-input -w
 }
+# URLデコード
+urldecode() {
+  echo "${1}" | nkf -w --url-input
+}
+
+
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
