@@ -23,7 +23,6 @@ urldecode() {
   echo "${1}" | nkf -w --url-input
 }
 
-
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
