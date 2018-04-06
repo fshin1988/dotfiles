@@ -26,3 +26,6 @@ urldecode() {
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# Setting for golang
+export GOPATH=$HOME/gocode
