@@ -29,3 +29,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # Setting for golang
 export GOPATH=$HOME/gocode
+
+# Change display name of terminal
+PS1="\t \W $ "
