@@ -31,3 +31,7 @@ export GOPATH=$HOME/gocode
 
 # Change display name of terminal
 PS1="\t \W $ "
+
+export PHPENV_ROOT=$HOME/.phpenv
+export PATH="$PATH:$PHPENV_ROOT/bin"
+eval "$(phpenv init -)"
