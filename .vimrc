@@ -138,9 +138,11 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('slim-template/vim-slim')
   call dein#add('cohama/lexima.vim')
   call dein#add('posva/vim-vue')
+  call dein#add('ctrlpvim/ctrlp.vim')
 
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('Shougo/vimshell')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
   " Required:
   call dein#end()
