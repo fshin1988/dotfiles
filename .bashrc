@@ -23,7 +23,7 @@ urldecode() {
 }
 
 export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # Setting for golang
@@ -34,7 +34,7 @@ PS1="\t \W $ "
 
 export PHPENV_ROOT=$HOME/.phpenv
 export PATH="$PATH:$PHPENV_ROOT/bin"
-eval "$(phpenv init -)"
+if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
