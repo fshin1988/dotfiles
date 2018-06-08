@@ -139,6 +139,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('cohama/lexima.vim')
   call dein#add('posva/vim-vue')
   call dein#add('ctrlpvim/ctrlp.vim')
+  call dein#add('tpope/vim-markdown')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')
