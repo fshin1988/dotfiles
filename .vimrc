@@ -25,8 +25,8 @@ set cursorline
 " set cursorcolumn
 " 行末の1文字先までカーソルを移動できるように
 " set virtualedit=onemore
-" 128桁目に印をつける
-set colorcolumn=128
+" 120桁目に印をつける
+set colorcolumn=120
 " インデントはスマートインデント
 set smartindent
 " ビープ音を可視化
@@ -199,3 +199,8 @@ let g:syntastic_error_symbol='✗'
 let g:syntastic_style_error_symbol = '✗'
 let g:syntastic_warning_symbol = '⚠'
 let g:syntastic_style_warning_symbol = '⚠'
+
+" --------------------------------
+" ctrlp.vim
+" --------------------------------
+let g:ctrlp_clear_cache_on_exit = 1
