@@ -88,6 +88,27 @@ nnoremap D "_D
 nnoremap c "_c
 " 対応するdo end等にカーソル移動
 source $VIMRUNTIME/macros/matchit.vim
+let mapleader = "\<Space>"
+
+" 画面分割系
+nnoremap s <Nop>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sr <C-w>r
+nnoremap s= <C-w>=
+nnoremap sw <C-w>w
+nnoremap so <C-w>_<C-w>|
+nnoremap sO <C-w>=
+nnoremap ss :<C-u>sp<CR>
+nnoremap sv :<C-u>vs<CR>
+nnoremap sq :<C-u>q<CR>
+nnoremap sQ :<C-u>bd<CR>
 
 " tags関連
 " ファイル保存時にtagsを作成
@@ -142,6 +163,9 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('posva/vim-vue')
   call dein#add('ctrlpvim/ctrlp.vim')
   call dein#add('tpope/vim-markdown')
+  call dein#add('tpope/vim-dispatch')
+  call dein#add('thoughtbot/vim-rspec')
+  call dein#add('kana/vim-submode')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')
@@ -157,9 +181,9 @@ filetype plugin indent on
 syntax enable
 
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+if dein#check_install()
+  call dein#install()
+endif
 
 "End dein Scripts-------------------------
 
@@ -206,3 +230,20 @@ let g:syntastic_style_warning_symbol = '⚠'
 " ctrlp.vim
 " --------------------------------
 let g:ctrlp_clear_cache_on_exit = 1
+
+" rspec
+let g:rspec_command = "Dispatch bundle exec rspec {spec}"
+nmap <leader>c :call RunCurrentSpecFile()<CR>
+nmap <leader>n :call RunNearestSpec()<CR>
+nmap <leader>l :call RunLastSpec()<CR>
+nmap <leader>a :call RunAllSpecs()<CR>
+
+" vim-submode
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
