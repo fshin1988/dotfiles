@@ -108,6 +108,10 @@ nnoremap sv :<C-u>vs<CR>
 nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 
+" バッファ操作系
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
+
 " tags関連
 " ファイル保存時にtagsを作成
 let g:auto_ctags = 1
