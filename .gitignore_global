@@ -1,3 +1,5 @@
 .DS_Store
 tags
 .byebug_history
+.env
+.vscode

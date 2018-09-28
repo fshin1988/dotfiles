@@ -17,6 +17,8 @@ set showcmd
 set clipboard=unnamed,autoselect
 " grep時にQuickfixを開く
 autocmd QuickFixCmdPost *grep* cwindow
+" 改行コードの認識
+set fileformats=unix
 
 " 見た目系
 " 行番号を表示
@@ -43,7 +45,7 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 " シンタックスハイライト
-syntax enable
+" syntax enable
 
 " Tab系
 " 不可視文字を可視化(タブ,スペース,改行)
@@ -168,6 +170,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('tpope/vim-dispatch')
   call dein#add('thoughtbot/vim-rspec')
   call dein#add('kana/vim-submode')
+  call dein#add('leafgarland/typescript-vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')

@@ -2,6 +2,9 @@ alias be='bundle exec'
 exdgrep() {
   grep -rn "${1}" . --exclude-dir={./.git,./tmp,./log,./vendor} | grep -v "^\.\/tags";
 }
+exdgrepl() {
+  grep -rl "${1}" . --exclude-dir={./.git,./tmp,./log,./vendor} | grep -v "^\.\/tags";
+}
 # crontab -r を封印する
 function crontab() {
   local opt
@@ -21,10 +24,16 @@ jsoncurl() {
 urldecode() {
   echo "${1}" | nkf -w --url-input
 }
+# git関連
+gpush() {
+  git push origin `git rev-parse --abbrev-ref HEAD`
+}
 
 export PATH=$HOME/.rbenv/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+# export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH="$HOME/.ndenv/bin:$PATH"
+eval "$(ndenv init -)"
 
 # Setting for golang
 export GOPATH=$HOME/gocode
