@@ -45,7 +45,7 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 " シンタックスハイライト
-" syntax enable
+syntax enable
 
 " Tab系
 " 不可視文字を可視化(タブ,スペース,改行)
