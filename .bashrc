@@ -28,6 +28,26 @@ urldecode() {
 gpush() {
   git push origin `git rev-parse --abbrev-ref HEAD`
 }
+# remoteに存在しないローカルブランチの削除
+cleanbranch() {
+  if [[ $1 = "-h" ]]; then
+    echo "usage: cleanbranch -D"
+    return 0
+  fi
+
+  git remote prune origin
+  for i in `git branch | grep -v master`
+  do
+    git branch -r | awk '{print substr($1, 8)}' | grep -x $i > /dev/null
+    if [ $? = 1 ]; then
+      if [[ $1 = "-D" ]]; then
+        git branch -D $i
+      else
+        echo $i
+      fi
+    fi
+  done
+}
 
 export PATH=$HOME/.rbenv/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
