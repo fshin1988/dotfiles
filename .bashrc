@@ -36,7 +36,7 @@ cleanbranch() {
   fi
 
   git remote prune origin
-  for i in `git branch | grep -v master`
+  for i in `git branch | grep -v master | grep -v "*"`
   do
     git branch -r | awk '{print substr($1, 8)}' | grep -x $i > /dev/null
     if [ $? = 1 ]; then
