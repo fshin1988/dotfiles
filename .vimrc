@@ -171,6 +171,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('thoughtbot/vim-rspec')
   call dein#add('kana/vim-submode')
   call dein#add('leafgarland/typescript-vim')
+  call dein#add('fatih/vim-go')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')
