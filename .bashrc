@@ -16,10 +16,6 @@ function crontab() {
   done
   command crontab "$@"
 }
-# 返却されたjsonを整形する
-jsoncurl() {
-  curl "${1}" | python -mjson.tool | sed 's/\\\u\(....\)/\&#x\1;/g' | nkf --numchar-input -w
-}
 # URLデコード
 urldecode() {
   echo "${1}" | nkf -w --url-input
@@ -51,12 +47,12 @@ cleanbranch() {
 
 export PATH=$HOME/.rbenv/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH="$HOME/.ndenv/bin:$PATH"
 eval "$(ndenv init -)"
 
 # Setting for golang
 export GOPATH=$HOME/gocode
+export PATH="$GOPATH/bin:$PATH"
 
 # Change display name of terminal
 PS1="\t \W $ "
