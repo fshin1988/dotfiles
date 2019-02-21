@@ -239,10 +239,10 @@ let g:ctrlp_clear_cache_on_exit = 1
 
 " rspec
 let g:rspec_command = "Dispatch bundle exec rspec {spec}"
-nmap <leader>c :call RunCurrentSpecFile()<CR>
-nmap <leader>n :call RunNearestSpec()<CR>
-nmap <leader>l :call RunLastSpec()<CR>
-nmap <leader>a :call RunAllSpecs()<CR>
+au FileType ruby nmap <leader>c :call RunCurrentSpecFile()<CR>
+au FileType ruby nmap <leader>n :call RunNearestSpec()<CR>
+au FileType ruby nmap <leader>l :call RunLastSpec()<CR>
+au FileType ruby nmap <leader>a :call RunAllSpecs()<CR>
 
 " vim-submode
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
@@ -253,3 +253,7 @@ call submode#map('bufmove', 'n', '', '>', '<C-w>>')
 call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+
+" go
+au FileType go nmap <leader>c :GoBuild<CR>
+au FileType go nmap <leader>t :GoTest<CR>
