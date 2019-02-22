@@ -257,3 +257,4 @@ call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 " go
 au FileType go nmap <leader>c :GoBuild<CR>
 au FileType go nmap <leader>t :GoTest<CR>
+au FileType go nmap <C-b> :GoDefPop<CR>

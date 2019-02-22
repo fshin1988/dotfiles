@@ -53,6 +53,8 @@ eval "$(ndenv init -)"
 # Setting for golang
 export GOPATH=$HOME/gocode
 export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.goenv/bin:$PATH"
+eval "$(goenv init -)"
 
 # Change display name of terminal
 PS1="\t \W $ "
