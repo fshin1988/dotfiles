@@ -115,12 +115,6 @@ nnoremap <silent> <C-j> :bprev<CR>
 nnoremap <silent> <C-k> :bnext<CR>
 
 " tags関連
-" ファイル保存時にtagsを作成
-let g:auto_ctags = 1
-let g:auto_ctags_tags_args = '--exclude="*.js" --tag-relative --recurse --sort=yes  --append=no'
-let g:auto_ctags_directory_list = ['.git']
-" .gitからtags読み込み
-set tags+=.git/tags
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
 
@@ -160,7 +154,6 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('jpo/vim-railscasts-theme')
   call dein#add('tpope/vim-endwise')
   call dein#add('kchmck/vim-coffee-script')
-  call dein#add('soramugi/auto-ctags.vim')
   call dein#add('vim-syntastic/syntastic')
   call dein#add('slim-template/vim-slim')
   call dein#add('cohama/lexima.vim')
@@ -172,6 +165,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('kana/vim-submode')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('fatih/vim-go')
+  call dein#add('szw/vim-tags')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')
