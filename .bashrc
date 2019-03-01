@@ -57,7 +57,8 @@ export PATH="$HOME/.goenv/bin:$PATH"
 eval "$(goenv init -)"
 
 # Change display name of terminal
-PS1="\t \W $ "
+source ~/.git-prompt.sh
+PS1='[\t \W$(__git_ps1 " (%s)")]\$ '
 
 export PHPENV_ROOT=$HOME/.phpenv
 export PATH="$PATH:$PHPENV_ROOT/bin"
