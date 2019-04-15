@@ -5,6 +5,9 @@ exdgrep() {
 exdgrepl() {
   grep -rl "${1}" . --exclude-dir={./.git,./tmp,./log,./vendor} | grep -v "^\.\/tags";
 }
+rubyctags() {
+  ctags -R --languages=ruby --exclude=.git --exclude=log .;
+}
 # crontab -r を封印する
 function crontab() {
   local opt
@@ -52,9 +55,10 @@ eval "$(ndenv init -)"
 
 # Setting for golang
 export GOPATH=$HOME/gocode
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$HOME/.goenv/bin:$PATH"
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
+export PATH="$GOPATH/bin:$PATH"
 
 # Change display name of terminal
 source ~/.git-prompt.sh

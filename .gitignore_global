@@ -3,3 +3,5 @@ tags
 .byebug_history
 .env
 .vscode
+.idea
+.envrc
