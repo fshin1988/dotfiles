@@ -117,7 +117,7 @@ nnoremap <silent> <C-k> :bnext<CR>
 " tags関連
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
-au FileType ruby command GenerateRubyCtags :!ctags -R --languages=ruby --exclude=.git --exclude=log .
+command GenerateRubyCtags :!ctags -R --languages=ruby --exclude=.git --exclude=log .
 
 " その他
 " cronを動かすためバックアップをスキップ
