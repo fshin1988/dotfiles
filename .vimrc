@@ -117,6 +117,7 @@ nnoremap <silent> <C-k> :bnext<CR>
 " tags関連
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]>
+au FileType ruby command GenerateRubyCtags :!ctags -R --languages=ruby --exclude=.git --exclude=log .
 
 " その他
 " cronを動かすためバックアップをスキップ
@@ -165,7 +166,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('kana/vim-submode')
   call dein#add('leafgarland/typescript-vim')
   call dein#add('fatih/vim-go')
-  call dein#add('szw/vim-tags')
+  " call dein#add('szw/vim-tags')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell')

@@ -5,9 +5,6 @@ exdgrep() {
 exdgrepl() {
   grep -rl "${1}" . --exclude-dir={./.git,./tmp,./log,./vendor} | grep -v "^\.\/tags";
 }
-rubyctags() {
-  ctags -R --languages=ruby --exclude=.git --exclude=log .;
-}
 # crontab -r を封印する
 function crontab() {
   local opt
