@@ -61,13 +61,9 @@ export PATH="$GOPATH/bin:$PATH"
 source ~/.git-prompt.sh
 PS1='[\t \W$(__git_ps1 " (%s)")]\$ '
 
-export PHPENV_ROOT=$HOME/.phpenv
-export PATH="$PATH:$PHPENV_ROOT/bin"
-if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # direnv
 export EDITOR=vim
 eval "$(direnv hook bash)"
+
+# anyenv
+eval "$(anyenv init -)"
