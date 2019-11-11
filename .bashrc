@@ -67,3 +67,5 @@ eval "$(direnv hook bash)"
 
 # anyenv
 eval "$(anyenv init -)"
+
+export BASH_SILENCE_DEPRECATION_WARNING=1
