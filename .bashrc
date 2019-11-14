@@ -66,6 +66,6 @@ export EDITOR=vim
 eval "$(direnv hook bash)"
 
 # anyenv
-eval "$(anyenv init -)"
+if which anyenv > /dev/null; then eval "$(anyenv init -)"; fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
