@@ -19,6 +19,8 @@ set clipboard=unnamed,autoselect
 autocmd QuickFixCmdPost *grep* cwindow
 " 改行コードの認識
 set fileformats=unix
+" メッセージを英語で表示
+language C
 
 " 見た目系
 " 行番号を表示
