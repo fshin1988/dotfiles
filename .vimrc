@@ -218,23 +218,23 @@ let g:indent_guides_guide_size = 1
 " --------------------------------
 " syntastic
 " --------------------------------
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
+" let g:syntastic_always_populate_loc_list = 0
+" let g:syntastic_auto_loc_list = 0
 " let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" let g:syntastic_check_on_wq = 0
 
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop -D'
-let g:syntastic_ruby_checkers = ['rubocop']
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+" let g:syntastic_ruby_rubocop_exe = 'bundle exec rubocop -D'
+" let g:syntastic_ruby_checkers = ['rubocop']
 
-let g:syntastic_error_symbol='✗'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_warning_symbol = '⚠'
-let g:syntastic_style_warning_symbol = '⚠'
+" let g:syntastic_error_symbol='✗'
+" let g:syntastic_style_error_symbol = '✗'
+" let g:syntastic_warning_symbol = '⚠'
+" let g:syntastic_style_warning_symbol = '⚠'
 
 " --------------------------------
 " ctrlp.vim
@@ -263,7 +263,7 @@ au FileType go nmap <leader>c :GoBuild<CR>
 au FileType go nmap <leader>t :GoTest<CR>
 au FileType go nmap <C-b> :GoDefPop<CR>
 let g:go_def_mode = 'godef'
-let g:go_snippet_engine = ""
+" let g:go_snippet_engine = ""
 
 " deoplete
 let g:deoplete#enable_at_startup = 1

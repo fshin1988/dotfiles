@@ -47,11 +47,11 @@ cleanbranch() {
 
 export PATH=$HOME/.rbenv/bin:$PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-export PATH="$HOME/.ndenv/bin:$PATH"
-eval "$(ndenv init -)"
+# export PATH="$HOME/.ndenv/bin:$PATH"
+# eval "$(ndenv init -)"
 
 # Setting for golang
-export GOPATH=$HOME/gocode
+# export GOPATH=$HOME/gocode
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
 eval "$(goenv init -)"
@@ -69,3 +69,8 @@ eval "$(direnv hook bash)"
 if which anyenv > /dev/null; then eval "$(anyenv init -)"; fi
 
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
