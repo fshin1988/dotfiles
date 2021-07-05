@@ -140,15 +140,15 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=~/.vim/dein_vim/repos/github.com/Shougo/dein.vim
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('~/.vim/dein_vim/')
-  call dein#begin('~/.vim/dein_vim/')
+if dein#load_state('~/.cache/dein/')
+  call dein#begin('~/.cache/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add('~/.vim/dein_vim/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
   call dein#add('Shougo/neosnippet.vim')
@@ -175,7 +175,7 @@ if dein#load_state('~/.vim/dein_vim/')
   call dein#add('Shougo/vimshell')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
 
-  call dein#add('Shougo/deoplete.nvim')
+  " call dein#add('Shougo/deoplete.nvim')
   if !has('nvim')
     call dein#add('roxma/nvim-yarp')
     call dein#add('roxma/vim-hug-neovim-rpc')
@@ -266,7 +266,7 @@ let g:go_def_mode = 'godef'
 " let g:go_snippet_engine = ""
 
 " deoplete
-let g:deoplete#enable_at_startup = 1
+" let g:deoplete#enable_at_startup = 1
 
 " neosnippet
 " Note: It must be "imap" and "smap".  It uses <Plug> mappings.

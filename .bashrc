@@ -54,8 +54,8 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # export GOPATH=$HOME/gocode
 export GOENV_ROOT="$HOME/.goenv"
 export PATH="$GOENV_ROOT/bin:$PATH"
-eval "$(goenv init -)"
 export PATH="$GOPATH/bin:$PATH"
+if which goenv > /dev/null; then eval "$(goenv init -)"; fi
 
 # Change display name of terminal
 source ~/.git-prompt.sh
@@ -63,7 +63,7 @@ PS1='[\t \W$(__git_ps1 " (%s)")]\$ '
 
 # direnv
 export EDITOR=vim
-eval "$(direnv hook bash)"
+if which direnv > /dev/null; then eval "$(direnv hook bash)"; fi
 
 # anyenv
 if which anyenv > /dev/null; then eval "$(anyenv init -)"; fi
@@ -71,6 +71,8 @@ if which anyenv > /dev/null; then eval "$(anyenv init -)"; fi
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
