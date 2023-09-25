@@ -21,4 +21,6 @@ fi
 # tmux
 if ! which tmux > /dev/null; then
   brew install tmux
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  tmux source ~/.tmux.conf
 fi
